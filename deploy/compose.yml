@@ -1,0 +1,43 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    env_file: ../.env
+    environment:
+      MANDADITO_DATA_DIR: /data
+      TRUST_PROXY: "1"
+      TRUST_PROXY_IP: 172.30.240.2
+    volumes:
+      - mandadito_data:/data
+      - ./secrets:/run/secrets:ro
+    restart: unless-stopped
+    networks:
+      private:
+        ipv4_address: 172.30.240.3
+  caddy:
+    image: caddy:2
+    environment:
+      MANDADITO_DOMAIN: ${MANDADITO_DOMAIN:?Configura el dominio público}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+    depends_on:
+      - app
+    networks:
+      private:
+        ipv4_address: 172.30.240.2
+networks:
+  private:
+    ipam:
+      config:
+        - subnet: 172.30.240.0/24
+volumes:
+  mandadito_data:
+  caddy_data:
+  caddy_config:

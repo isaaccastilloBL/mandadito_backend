@@ -1,0 +1,16 @@
+.git
+.github
+**/data
+**/node_modules
+**/.env
+**/*.p8
+**/*.jks
+**/*.keystore
+**/google-services.json
+deploy
+docs
+scripts
+tests
+*.md
+*.cmd
+railway.json

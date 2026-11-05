@@ -1,0 +1,17 @@
+{
+  "name": "mandadito-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file=.env server.mjs",
+    "dev": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "configure": "node scripts/configure.mjs",
+    "check": "node scripts/check-server.mjs",
+    "backup": "node scripts/backup.mjs"
+  }
+}

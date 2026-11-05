@@ -1,0 +1,32 @@
+{
+  "id": "./",
+  "name": "Mandadito",
+  "short_name": "Mandadito",
+  "description": "Tus pedidos y mandaditos en Zumpango, Estado de México.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffaf6",
+  "theme_color": "#fffaf6",
+  "icons": [
+    {
+      "src": "assets/icons/mandadito-192.png?v=20261023",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/mandadito-512.png?v=20261023",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/mandadito-maskable-512.png?v=20261023",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
